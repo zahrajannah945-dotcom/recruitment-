@@ -733,13 +733,6 @@ body:not(:has(.hero)) .navbar .brand-logo:hover::after {
   .hero { min-height: auto; }
 }
 
-
-/* =====================================================================
-   TAMBAHAN: palet warna baru, sidebar kanan (pengganti menu footer),
-   transisi hover biru pada card
-   ===================================================================== */
-
-/* ---------- Palet warna baru ---------- */
 :root {
   --deep-twilight: #03045eff;
   --bright-teal-blue: #0077b6ff;
@@ -748,15 +741,13 @@ body:not(:has(.hero)) .navbar .brand-logo:hover::after {
   --light-cyan: #caf0f8ff;
 }
 
-/* ---------- Sembunyikan menu lama di footer ---------- */
-/* Link About/Apply/Check Status/Admin dipindah ke sidebar kanan */
+
 .site-footer .footer-links,
 .site-footer .footer-admin,
 .site-footer a[href*="admin" i] {
   display: none;
 }
 
-/* ---------- Sidebar kanan: About / Apply / Check Status / Admin ---------- */
 .side-menu {
   position: fixed;
   top: 50%;
@@ -769,7 +760,7 @@ body:not(:has(.hero)) .navbar .brand-logo:hover::after {
   background: transparent; /* transparan di halaman selain utama */
   box-shadow: none;
 }
-/* Di halaman utama, sidebar penuh diganti ikon hamburger di navbar (lihat bawah) */
+
 body:has(.hero) .side-menu { display: none; }
 .side-menu-link {
   padding: 12px 20px;
@@ -823,9 +814,7 @@ body:has(.hero) .side-menu { display: none; }
   .side-menu-link:hover { padding-right: 12px; }
 }
 
-/* ---------- Card: transisi warna saat disorot ---------- */
-/* Dikecualikan .form-card supaya form isian tidak ikut berubah warna saat diisi */
-/* Hanya card di bagian "Open positions" (recruitment) yang berubah warna saat disorot */
+
 .position-card {
   transition: background-color 0.25s ease, border-color 0.25s ease,
               box-shadow 0.25s ease, transform 0.2s ease;
@@ -841,12 +830,6 @@ body:has(.hero) .side-menu { display: none; }
 .position-card:hover .card-icon { background: rgba(255, 255, 255, 0.18); color: var(--white); }
 .position-card:hover .badge { background: var(--white); color: var(--bright-teal-blue); }
 
-
-/* =====================================================================
-   TAMBAHAN: menu jadi ikon "garis tiga" (hamburger) di kanan atas navbar,
-   khusus halaman utama — warna solid, tanpa gradasi
-   ===================================================================== */
-
 .side-menu-toggle {
   position: relative;
   margin-left: var(--sp-4);
@@ -859,7 +842,6 @@ body:has(.hero) .side-menu { display: none; }
   pointer-events: none;
 }
 
-/* Ikon tiga garis */
 .hamburger-icon {
   display: flex;
   flex-direction: column;
@@ -882,11 +864,11 @@ body:has(.hero) .side-menu { display: none; }
   background: var(--deep-twilight);
 }
 
-/* Dropdown: About / Apply / Check Status / Admin */
+
 .side-menu-dropdown {
   position: absolute;
-  top: 100%;              /* menempel langsung, tanpa celah kosong */
-  margin-top: 8px;         /* jarak visual dibuat lewat margin, bukan posisi */
+  top: 100%;              
+  margin-top: 8px;        
   right: 0;
   z-index: 500;
   display: flex;
@@ -901,8 +883,7 @@ body:has(.hero) .side-menu { display: none; }
   pointer-events: none;
   transition: opacity 0.15s ease, visibility 0.15s ease;
 }
-/* Jembatan tak kasat mata: menyambung area hover dari ikon ke dropdown,
-   supaya kursor tidak pernah keluar dari zona hover saat turun ke menu. */
+
 .side-menu-toggle::after {
   content: "";
   position: absolute;
@@ -911,7 +892,7 @@ body:has(.hero) .side-menu { display: none; }
   top: 100%;
   height: 8px;
 }
-/* Buka lewat hover/klik (checkbox) tanpa JavaScript */
+
 .side-menu-checkbox:checked ~ .side-menu-dropdown,
 .side-menu-toggle:hover .side-menu-dropdown,
 .side-menu-toggle:focus-within .side-menu-dropdown {
