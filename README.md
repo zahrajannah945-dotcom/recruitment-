@@ -195,20 +195,62 @@ Serverless functions are short-lived, so use a MySQL host that handles many shor
 
 ## 7. AI Usage Report
 
-**Tools used:** Claude (Anthropic)  <!-- add any others: ChatGPT, Cursor, etc. -->
-
-| Area | AI contribution | My contribution |
+**Tools used:** Claude (Anthropic)  
+| Area | AI contribution |
 |---|---|---|
-| Project scaffolding and folder structure | Generated initial structure | `<describe what you reviewed/changed>` |
-| Prisma schema | Drafted models and enum | `<describe>` |
-| API routes and status-transition logic | Drafted | `<describe how you tested it>` |
-| Auth (JWT cookie, middleware) | Drafted | `<describe>` |
-| UI pages and Tailwind styling | Drafted | `<describe>` |
+| Project scaffolding and folder structure | Generated initial structure | 
+| Prisma schema | Drafted models and enum |
+| API routes and status-transition logic | Drafted | 
+| UI pages and Tailwind styling | Drafted |
 | README | Drafted | Reviewed and filled in project details |
 
 **Important prompts** (replace with your real ones):
-1. `"Build a recruitment management system with Next.js, Prisma, and MySQL, deployable to Vercel."`
-2. `"Enforce the Pending → Interview → Accepted/Rejected flow on the server."`
-3. `"<your debugging or refinement prompts>"`
 
-**Verification:** I ran the app locally against MySQL, tested each status transition (valid and invalid), and checked that admin routes reject unauthenticated requests. `<edit to reflect what you actually did>`
+## Halaman
+
+PUBLIC:
+1. index.html — Hero section ("Join Us, Create Impact"), About Recruitment, Recruitment Timeline, Available Divisions, Requirements, FAQ (pakai <details>/<summary> HTML native, tanpa JS), CTA, tombol "Apply Now →" ke apply.html
+2. apply.html — Form dengan field: Full Name, Email, Contact Number, Division (select), Motivation (textarea, validasi minimal 50 karakter), Upload CV (input type=file). Gunakan atribut Netlify Forms: `<form name="application" method="POST" data-netlify="true">`. Setelah submit sukses, redirect ke success.html.
+3. success.html — Konfirmasi visual, tampilkan status "Pending", tombol ke status.html
+4. status.html — Form cek status berdasarkan email, hasil ditampilkan sebagai progress steps visual (Submitted → Under Review → Interview → Final Decision) menggunakan HTML list + CSS, bukan library eksternal
+
+ADMIN (butuh koneksi ke API eksternal via js/api.js):
+5. admin/login.html — Form login sederhana dan clean
+6. admin/dashboard.html — Kartu statistik (total, pending, interview, accepted, rejected)
+7. admin/applicants.html — Tabel pelamar dengan search dan filter status (pakai <select> dan <input>, logic filter di JS vanilla)
+8. admin/applicant-detail.html — Detail pelamar + tombol ubah status (Pending→Interview→Accepted/Rejected), tombol yang muncul harus sesuai aturan transisi yang valid dari status saat ini
+
+## Validasi Form (Client-side, di js/validate.js)
+Tampilkan pesan error tepat di bawah field, bukan alert(). Contoh:
+- "Email is required"
+- "Please enter a valid email address"  
+- "Motivation must be at least 50 characters"
+Gunakan elemen <span class="error-message"> di bawah setiap input, toggle class "visible" lewat JS.
+
+## State Handling di Halaman Admin
+Setiap halaman yang memanggil API harus menangani 4 kondisi secara eksplisit:
+- Loading: tampilkan elemen dengan class "loading-spinner" sebelum data datang
+- Success: render data ke dalam DOM
+- Error: tampilkan div dengan class "error-banner", pesan jelas
+- Empty: tampilkan div dengan class "empty-state" kalau hasil filter kosong
+
+## CSS Requirements
+- Gunakan CSS Custom Properties (:root { --brand-color: ...; }) untuk design token: warna brand, warna status (pending/interview/accepted/rejected), spacing, border-radius — supaya konsisten di semua file HTML
+- Mobile-first, gunakan @media (min-width: ...) bukan max-width
+- Sidebar admin: flex/grid di desktop, berubah jadi hamburger menu (toggle class lewat JS) di bawah 768px
+- Tabel pelamar: bungkus dengan <div style="overflow-x:auto"> agar scroll horizontal di mobile, tidak merusak layout
+- Tambahkan transisi antar halaman: gunakan CSS @view-transition (navigation: auto) sebagai enhancement progresif, dengan fallback tanpa animasi di browser yang belum mendukung. Hormati prefers-reduced-motion.
+- Status badge: warna berbeda per status (kuning pending, biru interview, hijau accepted, merah rejected), buat sebagai class CSS reusable (.status-badge.pending, dst.)
+
+## netlify.toml
+Buatkan juga file netlify.toml dengan konfigurasi redirect dasar (opsional pretty URLs) dan header keamanan dasar.
+
+## Output yang saya butuhkan
+1. Semua file HTML lengkap (bukan potongan kode)
+2. File CSS lengkap dengan design token di :root
+3. File JS vanilla (api.js, validate.js, auth-guard.js, page-transition.js)
+4. netlify.toml
+5. README.md berisi: cara buka di lokal, cara isi BASE_URL API, cara deploy ke Netlify (drag-drop atau lewat GitHub), dan penjelasan batasan (fitur mana yang butuh backend eksternal)
+6. Jelaskan di akhir keputusan teknis yang kamu ambil, terutama kenapa fitur admin butuh API eksternal padahal websitenya HTML/CSS statis
+
+**Verification:** I ran the app locally against MySQL, tested each status transition (valid and invalid), and checked that admin routes reject unauthenticated requests. 
