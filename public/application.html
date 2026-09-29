@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNA Indonesia — Application Form</title>
+  <meta name="description" content="Apply to join UNA Indonesia. Tell us about yourself and your motivation to join." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand-logo brand-logo-apply" href="recruitment.html">
+        <img src="../assets/images/logo-una.png" alt="UNA Indonesia — United Nations Association Indonesia" />
+      </a>
+      <nav class="nav-links desktop-only" aria-label="Primary">
+        <a href="recruitment.html#about">About</a>
+        <a href="recruitment.html#divisions">Recruitment</a>
+        <a href="recruitment.html#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container form-card">
+      <a href="recruitment.html" class="text-small text-secondary">&larr; Back to recruitment info</a>
+      <h1 style="margin-top: var(--sp-4);">Apply to UNA Indonesia</h1>
+      <p class="text-secondary">
+        Tell us about yourself. We'd love to know more about your background, interests,
+        and motivation to join us.
+      </p>
+
+      <!-- No backend: this form does not submit anywhere real. It links to a static success page. -->
+      <form class="card" action="application-success.html" method="get" novalidate>
+        <h3>Personal information</h3>
+
+        <div class="field">
+          <label for="fullName">Full name<span class="required">*</span></label>
+          <input class="input" type="text" id="fullName" name="fullName" placeholder="e.g. Azzahra Nailatul Jannah" required autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email<span class="required">*</span></label>
+          <input class="input" type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+          <p class="helper">We'll send your application updates to this address.</p>
+        </div>
+
+        <div class="field">
+          <label for="phone">Contact number<span class="required">*</span></label>
+          <input class="input" type="tel" id="phone" name="phone" placeholder="+62 8xx xxxx xxxx" required pattern="[0-9+\s]{8,16}" autocomplete="tel" />
+        </div>
+
+        <hr class="divider" />
+        <h3>Application</h3>
+
+        <div class="field">
+          <label for="division">Position preference<span class="required">*</span></label>
+          <select class="input" id="division" name="division" required>
+            <option value="" disabled selected>Select a position</option>
+            <optgroup label="Department of Internal Affairs">
+              <option value="hr-mentorship">HR &mdash; Mentorship Management Officer &mdash; 6 slots left</option>
+              <option value="hr-recruitment">HR &mdash; Recruitment &amp; Evaluation Officer &mdash; 4 slots left</option>
+              <option value="hr-training">HR &mdash; Training &amp; Development Officer &mdash; 4 slots left</option>
+              <option value="finance-legal">Finance &amp; Legal Officer &mdash; 3 slots left</option>
+            </optgroup>
+            <optgroup label="Department of Program Development">
+              <option value="rnd-substance">Research &amp; Development &mdash; Substance Officer &mdash; 5 slots left</option>
+              <option value="rnd-monev">Research &amp; Development &mdash; Monitoring &amp; Evaluation Officer &mdash; 3 slots left</option>
+              <option value="unai-hub">UNAI Hub &mdash; Program Officer &mdash; 5 slots left</option>
+            </optgroup>
+          </select>
+          <p class="helper">Positions with no remaining slots are closed for this recruitment cycle.</p>
+        </div>
+
+        <div class="field">
+          <label for="motivation">Motivation<span class="required">*</span></label>
+          <textarea class="input" id="motivation" name="motivation" maxlength="200" placeholder="Share your motivation for joining UNA Indonesia." required></textarea>
+          <div class="helper helper-count">Keep it concise — 200 characters max.</div>
+        </div>
+
+        <div class="field">
+          <label for="cv">CV upload<span class="required">*</span></label>
+          <div class="file-upload">
+            <input class="sr-only" type="file" id="cv" name="cv" accept="application/pdf" required />
+            <label for="cv" style="cursor:pointer; display:block;">
+              <strong>Choose a file</strong> or drag it here
+              <p class="text-small text-secondary">PDF only, maximum 5MB.</p>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="consent" for="consent">
+            <input type="checkbox" id="consent" name="consent" required />
+            <span>By submitting this form, you acknowledge that the information provided will be used for the UNA Indonesia recruitment process.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+        <p class="text-caption text-secondary center" style="margin-top: var(--sp-3);">
+          This is a static prototype. Submitting this form does not store any real data.
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="margin-top:0; border-top:none;">
+      &copy; 2026 UNA Indonesia. Front-end prototype &mdash; no data is stored.
+    </div>
+  </footer>
+  <nav class="side-menu" aria-label="Quick links">
+    <a class="side-menu-link" href="recruitment.html#about">About</a>
+    <a class="side-menu-link" href="application.html">Apply</a>
+    <a class="side-menu-link" href="status.html">Check Status</a>
+    <a class="side-menu-link side-menu-admin" href="admin/login.html">Admin</a>
+  </nav>
+
+</body>
+</html>

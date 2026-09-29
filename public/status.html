@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNA Indonesia — Check Your Application</title>
+  <meta name="description" content="Check the status of your UNA Indonesia recruitment application." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand-logo" href="recruitment.html">
+        <img src="../assets/images/logo.png" alt="UNA Indonesia — United Nations Association Indonesia" />
+      </a>
+      <nav class="nav-links desktop-only" aria-label="Primary">
+        <a href="recruitment.html#about">About</a>
+        <a href="recruitment.html#divisions">Recruitment</a>
+        <a href="recruitment.html#faq">FAQ</a>
+        <a class="btn btn-outline btn-sm" href="application.html">Apply Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container" style="max-width: 480px;">
+      <h1 class="center">Check your application</h1>
+      <p class="text-secondary center">Stay updated on your recruitment journey.</p>
+
+      <form class="card" style="margin-top: var(--sp-8);" novalidate>
+        <div class="field">
+          <label for="statusEmail">Email<span class="required">*</span></label>
+          <input class="input" type="email" id="statusEmail" name="statusEmail" placeholder="you@example.com" required />
+        </div>
+        <div class="field mb-0">
+          <label for="appId">Application ID<span class="required">*</span></label>
+          <input class="input" type="text" id="appId" name="appId" placeholder="UNA-2026-001" required />
+          <p class="helper">You'll find this in your confirmation email.</p>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" style="margin-top: var(--sp-4);">Check Status</button>
+      </form>
+
+      <!-- Static demo result — in production this appears only after a real lookup -->
+      <div class="card" style="margin-top: var(--sp-8);">
+        <div class="flex-between" style="margin-bottom: var(--sp-6);">
+          <h3 class="mb-0">Application status</h3>
+          <span class="badge badge-interview">Interview</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-step is-done">
+            <div class="timeline-dot"></div>
+            <div>
+              <p class="timeline-title mb-0">Application submitted</p>
+              <p class="text-small text-secondary mb-0">Your application has been received.</p>
+            </div>
+          </div>
+          <div class="timeline-step is-current">
+            <div class="timeline-dot"></div>
+            <div>
+              <p class="timeline-title mb-0">Interview</p>
+              <p class="text-small text-secondary mb-0">Your application is being reviewed for the interview stage.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot"></div>
+            <div>
+              <p class="timeline-title mb-0">Final decision</p>
+              <p class="text-small text-secondary mb-0">The final result will be announced here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-caption text-secondary center" style="margin-top: var(--sp-4);">
+        This page is a static UI prototype. Real status lookups require a backend and database.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="margin-top:0; border-top:none;">
+      &copy; 2026 UNA Indonesia. Front-end prototype &mdash; no data is stored.
+    </div>
+  </footer>
+  <nav class="side-menu" aria-label="Quick links">
+    <a class="side-menu-link" href="recruitment.html#about">About</a>
+    <a class="side-menu-link" href="application.html">Apply</a>
+    <a class="side-menu-link" href="status.html">Check Status</a>
+    <a class="side-menu-link side-menu-admin" href="admin/login.html">Admin</a>
+  </nav>
+
+</body>
+</html>

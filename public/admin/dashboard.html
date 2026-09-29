@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNA Indonesia — Admin Dashboard</title>
+  <meta name="description" content="Overview of UNA Indonesia recruitment applications." />
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar" aria-label="Admin navigation">
+      <div class="sidebar-brand">
+        <span class="sidebar-brand-logo">
+          <img src="../../assets/images/logo-una.png" alt="UNA Indonesia" />
+        </span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="is-active">Dashboard</a>
+        <a href="applicants.html">Applicants</a>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-foot">
+        <a href="#settings">Settings</a>
+        <a href="login.html">Logout</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header">
+        <div>
+          <h1 class="text-h2 mb-0">Dashboard</h1>
+          <p class="text-secondary mb-0">Welcome back, Admin.</p>
+        </div>
+        <a href="applicants.html" class="btn btn-primary">View Applicants</a>
+      </div>
+
+      <section aria-label="Recruitment statistics">
+        <div class="grid grid-4">
+          <div class="card stat-card">
+            <span class="stat-value">30</span>
+            <span class="stat-label">Total Applicants</span>
+          </div>
+          <div class="card stat-card accent-pending">
+            <span class="stat-value">14</span>
+            <span class="stat-label">Pending</span>
+          </div>
+          <div class="card stat-card accent-interview">
+            <span class="stat-value">9</span>
+            <span class="stat-label">Interview</span>
+          </div>
+          <div class="card stat-card accent-accepted">
+            <span class="stat-value">5</span>
+            <span class="stat-label">Accepted</span>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top: var(--sp-8);">
+        <div class="flex-between" style="margin-bottom: var(--sp-4);">
+          <h3 class="mb-0">Recent applicants</h3>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Division</th>
+                <th scope="col">Status</th>
+                <th scope="col">Applied Date</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Name">Alya Putri</td>
+                <td data-label="Division">HR — Recruitment &amp; Evaluation</td>
+                <td data-label="Status"><span class="badge badge-pending">Pending</span></td>
+                <td data-label="Applied Date">Sep 25, 2026</td>
+                <td data-label="Action"><a href="applicant-detail.html" class="btn btn-outline btn-sm">View Applicant</a></td>
+              </tr>
+              <tr>
+                <td data-label="Name">Bagas Prasetyo</td>
+                <td data-label="Division">R&amp;D — Substance Officer</td>
+                <td data-label="Status"><span class="badge badge-interview">Interview</span></td>
+                <td data-label="Applied Date">Sep 24, 2026</td>
+                <td data-label="Action"><a href="applicant-detail.html" class="btn btn-outline btn-sm">View Applicant</a></td>
+              </tr>
+              <tr>
+                <td data-label="Name">Citra Melinda</td>
+                <td data-label="Division">UNAI Hub — Program Officer</td>
+                <td data-label="Status"><span class="badge badge-accepted">Accepted</span></td>
+                <td data-label="Applied Date">Sep 22, 2026</td>
+                <td data-label="Action"><a href="applicant-detail.html" class="btn btn-outline btn-sm">View Applicant</a></td>
+              </tr>
+              <tr>
+                <td data-label="Name">Dimas Aditya</td>
+                <td data-label="Division">Finance &amp; Legal Officer</td>
+                <td data-label="Status"><span class="badge badge-rejected">Rejected</span></td>
+                <td data-label="Applied Date">Sep 20, 2026</td>
+                <td data-label="Action"><a href="applicant-detail.html" class="btn btn-outline btn-sm">View Applicant</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <p class="text-caption text-secondary" style="margin-top: var(--sp-6);">
+        This dashboard uses fictional demo data. Real-time statistics require a backend and database.
+      </p>
+    </main>
+  </div>
+</body>
+</html>

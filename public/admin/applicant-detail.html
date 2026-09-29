@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNA Indonesia — Applicant Detail</title>
+  <meta name="description" content="Review applicant details and update recruitment status." />
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar" aria-label="Admin navigation">
+      <div class="sidebar-brand">
+        <span class="sidebar-brand-logo">
+          <img src="../../assets/images/logo-una.png" alt="UNA Indonesia" />
+        </span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="applicants.html" class="is-active">Applicants</a>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-foot">
+        <a href="#settings">Settings</a>
+        <a href="login.html">Logout</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <a href="applicants.html" class="text-small text-secondary">&larr; Back to Applicants</a>
+      <div class="admin-header" style="margin-top: var(--sp-3);">
+        <div>
+          <h1 class="text-h2 mb-0">Bagas Prasetyo</h1>
+          <p class="text-secondary mb-0">Application ID: UNA-2026-014</p>
+        </div>
+        <span class="badge badge-interview">Interview</span>
+      </div>
+
+      <div class="grid grid-2" style="align-items:flex-start;">
+        <div class="stack" style="gap: var(--sp-6);">
+          <div class="card">
+            <h4>Personal information</h4>
+            <div class="grid grid-2" style="gap: var(--sp-4);">
+              <div>
+                <p class="text-caption text-secondary mb-0">Email</p>
+                <p class="text-body mb-0">bagas@example.com</p>
+              </div>
+              <div>
+                <p class="text-caption text-secondary mb-0">Phone</p>
+                <p class="text-body mb-0">+62 812 3456 7890</p>
+              </div>
+              <div>
+                <p class="text-caption text-secondary mb-0">Position</p>
+                <p class="text-body mb-0">Research &amp; Development &mdash; Substance Officer</p>
+              </div>
+              <div>
+                <p class="text-caption text-secondary mb-0">Applied on</p>
+                <p class="text-body mb-0">Sep 24, 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h4>Motivation</h4>
+            <p class="text-secondary mb-0">
+              I've been following global development issues since high school, and I want to turn that
+              interest into real contribution. I believe UNA Indonesia is where I can learn research
+              skills while working alongside people who care about the same things I do.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="flex-between" style="margin-bottom: var(--sp-4);">
+              <h4 class="mb-0">CV</h4>
+              <div style="display:flex; gap: var(--sp-2);">
+                <a href="#cv-preview" class="btn btn-outline btn-sm">View CV</a>
+                <a href="#" class="btn btn-ghost btn-sm">Download CV</a>
+              </div>
+            </div>
+            <!-- Inline preview placeholder: a real build embeds a PDF viewer (e.g. pdf.js) here -->
+            <div id="cv-preview" class="card" style="background: var(--surface); text-align:center; padding: var(--sp-16);">
+              <p class="text-secondary mb-0">CV preview appears here.</p>
+              <p class="text-caption text-secondary mb-0">Inline PDF preview requires a backend to serve the uploaded file.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack" style="gap: var(--sp-6);">
+          <div class="card">
+            <h4>Application status</h4>
+            <div class="timeline">
+              <div class="timeline-step is-done">
+                <div class="timeline-dot"></div>
+                <div><p class="timeline-title mb-0">Submitted</p></div>
+              </div>
+              <div class="timeline-step is-current">
+                <div class="timeline-dot"></div>
+                <div><p class="timeline-title mb-0">Interview</p></div>
+              </div>
+              <div class="timeline-step">
+                <div class="timeline-dot"></div>
+                <div><p class="timeline-title mb-0">Final decision</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h4>Update status</h4>
+            <p class="text-small text-secondary">Choose the next step for this applicant.</p>
+            <div class="stack" style="gap: var(--sp-3);">
+              <a href="#" class="btn btn-success">Accept</a>
+              <a href="#" class="btn btn-danger">Reject</a>
+            </div>
+          </div>
+
+          <!-- Confirmation panel reference, shown when an admin action is triggered -->
+          <div class="confirm-panel">
+            <h4 class="mb-0">Move applicant to Interview?</h4>
+            <p class="text-small text-secondary">The applicant's status will be updated and visible in the recruitment process.</p>
+            <div class="confirm-actions">
+              <a href="#" class="btn btn-ghost btn-sm">Cancel</a>
+              <a href="#" class="btn btn-primary btn-sm">Confirm</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-caption text-secondary" style="margin-top: var(--sp-8);">
+        Status actions are shown for layout purposes only. Updating status, storing CVs, and sending
+        notifications require a backend and database.
+      </p>
+    </main>
+  </div>
+</body>
+</html>

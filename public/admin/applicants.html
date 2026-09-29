@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNA Indonesia — Applicant Management</title>
+  <meta name="description" content="Manage and review UNA Indonesia recruitment applicants." />
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar" aria-label="Admin navigation">
+      <div class="sidebar-brand">
+        <span class="sidebar-brand-logo">
+          <img src="../../assets/images/logo-una.png" alt="UNA Indonesia" />
+        </span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="applicants.html" class="is-active">Applicants</a>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-foot">
+        <a href="#settings">Settings</a>
+        <a href="login.html">Logout</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header">
+        <div>
+          <h1 class="text-h2 mb-0">Applicants</h1>
+          <p class="text-secondary mb-0">Manage and review recruitment applications.</p>
+        </div>
+      </div>
+
+      <form class="toolbar" role="search" aria-label="Filter applicants">
+        <label class="sr-only" for="search">Search applicants</label>
+        <input class="input" type="search" id="search" name="search" placeholder="Search applicants..." />
+
+        <label class="sr-only" for="statusFilter">Filter by status</label>
+        <select class="input" id="statusFilter" name="statusFilter">
+          <option value="">Status</option>
+          <option value="pending">Pending</option>
+          <option value="interview">Interview</option>
+          <option value="accepted">Accepted</option>
+          <option value="rejected">Rejected</option>
+        </select>
+
+        <label class="sr-only" for="divisionFilter">Filter by division</label>
+        <select class="input" id="divisionFilter" name="divisionFilter">
+          <option value="">Position</option>
+          <optgroup label="Department of Internal Affairs">
+            <option value="hr-mentorship">HR &mdash; Mentorship Management</option>
+            <option value="hr-recruitment">HR &mdash; Recruitment &amp; Evaluation</option>
+            <option value="hr-training">HR &mdash; Training &amp; Development</option>
+            <option value="finance-legal">Finance &amp; Legal Officer</option>
+          </optgroup>
+          <optgroup label="Department of Program Development">
+            <option value="rnd-substance">R&amp;D &mdash; Substance Officer</option>
+            <option value="rnd-monev">R&amp;D &mdash; Monitoring &amp; Evaluation</option>
+            <option value="unai-hub">UNAI Hub &mdash; Program Officer</option>
+          </optgroup>
+        </select>
+      </form>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Division</th>
+              <th scope="col">Status</th>
+              <th scope="col">Applied Date</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Name">Alya Putri</td>
+              <td data-label="Email">alya@example.com</td>
+              <td data-label="Division">HR — Recruitment &amp; Evaluation</td>
+              <td data-label="Status"><span class="badge badge-pending">Pending</span></td>
+              <td data-label="Applied Date">Sep 25, 2026</td>
+              <td data-label="Action"><a href="applicant-detail.html" class="btn btn-outline btn-sm">View</a></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Bagas Prasetyo</td>
+              <td data-label="Email">bagas@example.com</td>
+              <td data-label="Division">R&amp;D — Substance Officer</td>
+              <td data-label="Status"><span class="badge badge-interview">Interview</span></td>
+              <td data-label="Applied Date">Sep 24, 2026</td>
+              <td data-label="Action"><a href="applicant-detail.html" class="btn btn-outline btn-sm">View</a></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Citra Melinda</td>
+              <td data-label="Email">citra@example.com</td>
+              <td data-label="Division">UNAI Hub — Program Officer</td>
+              <td data-label="Status"><span class="badge badge-accepted">Accepted</span></td>
+              <td data-label="Applied Date">Sep 22, 2026</td>
+              <td data-label="Action"><a href="applicant-detail.html" class="btn btn-outline btn-sm">View</a></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Dimas Aditya</td>
+              <td data-label="Email">dimas@example.com</td>
+              <td data-label="Division">Finance &amp; Legal Officer</td>
+              <td data-label="Status"><span class="badge badge-rejected">Rejected</span></td>
+              <td data-label="Applied Date">Sep 20, 2026</td>
+              <td data-label="Action"><a href="applicant-detail.html" class="btn btn-outline btn-sm">View</a></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Eka Wardani</td>
+              <td data-label="Email">eka@example.com</td>
+              <td data-label="Division">HR — Recruitment &amp; Evaluation</td>
+              <td data-label="Status"><span class="badge badge-pending">Pending</span></td>
+              <td data-label="Applied Date">Sep 19, 2026</td>
+              <td data-label="Action"><a href="applicant-detail.html" class="btn btn-outline btn-sm">View</a></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Fajar Nugroho</td>
+              <td data-label="Email">fajar@example.com</td>
+              <td data-label="Division">UNAI Hub — Program Officer</td>
+              <td data-label="Status"><span class="badge badge-interview">Interview</span></td>
+              <td data-label="Applied Date">Sep 18, 2026</td>
+              <td data-label="Action"><a href="applicant-detail.html" class="btn btn-outline btn-sm">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-caption text-secondary" style="margin-top: var(--sp-6);">
+        Search and filters are shown for layout purposes only. Real filtering requires a backend.
+      </p>
+
+      <!-- Empty state reference (hidden by default in this static demo) -->
+      <!--
+      <div class="empty-state">
+        <h3>No applicants found</h3>
+        <p>Try adjusting your search or filters.</p>
+      </div>
+      -->
+    </main>
+  </div>
+</body>
+</html>

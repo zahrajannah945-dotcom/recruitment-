@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNA Indonesia — Admin Sign In</title>
+  <meta name="description" content="Sign in to the UNA Indonesia recruitment management dashboard." />
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <main class="section" style="min-height: 100vh; display:flex; align-items:center;">
+    <div class="container" style="max-width: 400px;">
+      <div class="card" style="padding: var(--sp-12) var(--sp-8);">
+        <div class="brand-logo-lockup">
+          <img src="../../assets/images/logo-una-full.png" alt="UNA Indonesia — United Nations Association Indonesia" />
+        </div>
+        <p class="text-small text-secondary center" style="margin-top: var(--sp-2);">Recruitment Management</p>
+
+        <h1 class="text-h3 center" style="margin-top: var(--sp-8);">Welcome back</h1>
+        <p class="text-secondary center">Sign in to manage applicant applications.</p>
+
+        <!-- No backend: link simulates login for demonstration purposes only -->
+        <form novalidate>
+          <div class="field">
+            <label for="adminEmail">Email<span class="required">*</span></label>
+            <input class="input" type="email" id="adminEmail" name="adminEmail" placeholder="admin@unaindonesia.org" required autocomplete="username" />
+          </div>
+          <div class="field">
+            <label for="adminPassword">Password<span class="required">*</span></label>
+            <input class="input" type="password" id="adminPassword" name="adminPassword" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required autocomplete="current-password" />
+          </div>
+          <label class="consent" for="remember" style="margin-bottom: var(--sp-6);">
+            <input type="checkbox" id="remember" name="remember" />
+            <span>Remember me</span>
+          </label>
+          <a href="dashboard.html" class="btn btn-primary btn-block">Sign In</a>
+        </form>
+      </div>
+      <p class="text-caption text-secondary center" style="margin-top: var(--sp-4);">
+        Demo only — this button links directly to the dashboard. Real authentication requires a backend.
+      </p>
+    </div>
+  </main>
+</body>
+</html>
