@@ -4,9 +4,8 @@ An applicant tracking workflow for member recruitment. Applicants read the recru
 
 > Technical Case 03 — Recruitment Management System (Frontend & Backend Developer selection)
 
-- **Live demo:** `<add your Vercel URL here>`
-- **Repository:** `<add your GitHub URL here>`
-- **Demo admin login:** `<email>` / `<password>` (seeded, see Setup step 5)
+- **Live demo:** `https://beamish-bubblegum-761c36.netlify.app/public/recruitment.html`
+- **Repository:** `(https://zahrajannah945-dotcom.github.io/recruitment-/public/recruitment.html)`
 
 ---
 
